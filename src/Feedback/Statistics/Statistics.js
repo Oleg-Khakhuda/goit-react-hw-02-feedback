@@ -1,20 +1,31 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import s from './Statistics.module.css';
 
 export default class Statistics extends Component {
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.props;
 
     return (
-      <>
-        <ul>
-          <p>Good: {good}</p>
-          <p>Neutral: {neutral}</p>
-          <p>Bad: {bad}</p>
-          <p>Total: {total}</p>
-          <p>Positive feedback: {positivePercentage}%</p>
+      <div className={s.statistics}>
+        <ul className={s.statisticsList}>
+          <li>
+            <p>Good: {good}</p>
+          </li>
+          <li>
+            <p>Neutral: {neutral}</p>
+          </li>
+          <li>
+            <p>Bad: {bad}</p>
+          </li>
+          <li>
+            <p>Total: {total}</p>
+          </li>
+          <li>
+            <p>Positive feedback: {positivePercentage}%</p>
+          </li>
         </ul>
-      </>
+      </div>
     );
   }
 }
